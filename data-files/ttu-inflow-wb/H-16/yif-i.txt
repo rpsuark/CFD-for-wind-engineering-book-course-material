@@ -1,0 +1,144 @@
+213,151,81,65,101,49,103,17,0.02,100.0
+0.195,0.006,5000,4.E-7,13.25,9.375,5.,0.1,1,43,4.0,8.6,1
+
+
+
+107,76,41,33,51,25,52,9,0.02,20.2
+0.195,0.006,5000,4.E-7,13.25,9.375,5.,0.1,2,20,4.0,8.6,5 
+20.0  10.0   2.0   1.0   0.5
+0.00   0.20  0.10  0.10  0.10
+
+213,151,81,65,101,49,103,17,0.02,100.0
+0.195,0.006,5000,4.E-7,13.25,9.375,5.,0.1,2,86,4.0,8.6,5
+20.0  10.0   2.0   1.0   0.5
+0.00   0.20  0.10  0.10  0.10
+ 
+0.1,2,86
+0.1,2,215
+
+6/23/20-yif.f-data
+READ(5,*)IM,JM,KM,IMK1,IMK2,JMK1,JMK2,KH,DTT,TTIME
+READ(5,*)C11,C2,IPLOT,VISC,XL3,YL3,ZL,DF,IFS,IFE,HREF,UREF,NWAVE
+      READ(5,*)(WLEN(I),I=1,NWAVE)
+      READ(5,*)(UTM(I),I=1,NWAVE)
+
+Line 1	
+IM		#of points in x 
+JM		# of points in y 
+KM		# of points in z
+IMK1 & IMK2	Beginning & end of I for building
+JMK1 & JMK2	Beginning & end of J for building
+KH		Building top K
+DT		time step
+TTIME		Totaltime to run
+
+Line 2
+C11 & C2	Log law parameter-non-dimensional
+IPLOT		# of step at which whole field is writtena s movie file
+VISC		visc=1/Re
+XL3		Domain length in x
+YL3		Domain length in y
+ZL		Domain length in z
+DF		Frequncy width
+IFS & IFE	starting and ending range of f#
+HREF,VREF	Refernce height & velocity
+NWAVE		# of waves for simplified procedure
+
+
+213,151,81,65,101,49,103,1,0.02,100.0
+0.195,0.006,5000,4.E-7,13.25,9.375,5., 5
+20.0  10.0   2.0   1.0   0.5
+0.00   0.20  0.10  0.10  0.10
+REGION 2-with buidling-ttu-dx-16
+
+425,301,161,129,201,97,205,33,0.02,100.0
+0.195,0.006,5000,4.E-7,13.25,9.375,5., 5
+20.0  10.0   2.0   1.0   0.5
+0.00   0.00  0.07  0.00  0.00
+REGION 2-with buidling-ttu-dx-32
+
+161,81,81,65,81,33,49,17,0.03,100.0
+0.179,0.00375,5000,1.E-4,10.,5.,5., 5
+20.0  10.0   2.0   1.0   0.5
+0.00   0.00  0.00  0.00  0.00
+REGION 2-with buidling-silsoe
+5-waves
+20.0  10.0   2.0   1.0   0.5
+0.02   0.02  0.015  0.01  0.01
+3 waves
+20.0  10.0   2.0   1.0   0.5
+0.00   0.00  0.07  0.07  0.07
+2 waves
+20.0  10.0   2.0   1.0   0.5
+0.05   0.05  0.00  0.00  0.00
+
+321,161,161,129,161,65,97,1,0.01,10.0
+0.179,0.00375,5000,1.E-4,10.,5.,5., 0.5,0.1
+REGION 2-no building
+
+321,161,161,129,161,65,97,33,0.01,100.0
+0.179,0.00375,5000,1.E-4,10.,5.,5.
+REGION 2
+
+289,161,129,97,129,65,97,33,0.01,100.0
+0.179,0.00375,5000,1.E-4,9.,5.,4.
+REGION 3-dx-1/32
+
+145,81,65,49,65,33,49,17,0.01,100.0
+0.179,0.00375,5000,1.E-4,9.,5.,4.
+REGION 3-dx-1/16
+
+161,81,81,65,81,33,49,17,0.01,100.0
+0.179,0.00375,5000,1.E-4,10.,5.,5.
+REGION 2
+
+113,81,65,33,49,33,49,17,0.01,40.0
+0.179,0.00375,5000,1.E-4,7.,5.,4.
+region 4
+
+257,129,129,65,81,57,73,17,0.01,100.0
+0.179,0.00375,5000,1.E-4,16.,8.,8.
+
+129,65,65,33,41,29,37,9,0.02,150.0
+0.179,0.00375,5000,1.E-4,16.,8.,8.
+data for b3d5.f
+READ(5,*)IM,JM,KM,IMK1,IMK2,JMK1,JMK2,KH,DTT,TTIME
+      READ(5,*)C11,C2,IPLOT,VISC,XL,YL,ZL
+
+
+129,65,65,16.,8.,8.,33,41,29,37,1
+0.0001,0.02,10.0,0.00002,1.0,0.179,0.00375,1000
+
+257,129,129,16.,8.,8.,65,81,57,73,17
+0.001,0.02,5.0,0.2,1.0,0.179,0.00375,1000
+
+129,65,65,16.,8.,8.,33,41,29,37,9
+0.001,0.02,10.0,0.2,1.0,0.179,0.00375,1000
+
+
+257,129,16.,8.,65,81,1,17
+0.001,0.02,60.,0.2
+wiht building
+
+READ(2,*)IM,JM,KM,XL,YL,ZL,IB1,IB2,JB1,JB2,KB
+      READ(2,*)VISC,DT,TTIME,UTUM,WLEN,C11,C2,IFL2
+
+
+READ(3,*)IM,JM,XL,YL,IB1,IB2,JB1,JB2
+READ(3,*)VISC,DT,TTIME,utum,imovie,IREAD
+
+Line 1	
+IM		#of points in x 
+JM		# of points in y 
+XL		Domain length in x
+YL		Domain length in y
+IB1 & IB2	Beginning & end of I for building
+JB1 & JB2	Beginning & end of J for building
+
+Line 2
+VISC		visc=1/Re
+DT		time step
+TTIME		Totaltime to run
+UTUM		Turbulenet amplitude
+IMOVIE		time steps after imovie movie files are written
+IRUN		=0 write file, =1 read the data but don't write
